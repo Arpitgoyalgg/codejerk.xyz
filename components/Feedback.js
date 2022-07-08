@@ -35,7 +35,7 @@ export default function Feedback() {
   return (
     <>
       {isSubmitted ? (
-        <div className="mt-20 mb-20 bg-pink-400 py-16 px-10 lg:py-24 text-center text-4xl">
+        <div className="mt-20 mb-20 bg-pink-400 py-16 px-10 lg:py-24 text-center text-4xl text-white">
           Your Feedback has landed on the server 🚀!
         </div>
       ) : (

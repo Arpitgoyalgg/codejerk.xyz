@@ -28,7 +28,7 @@ export default function Feedback() {
 
   return (
     <>
-      <div className="full-width-container bg-back-secondary mt-14">
+      <div className="full-width-container bg-back-secondary">
         <div className="container mx-auto max-w-xl px-8 pt-16 pb-2 text-gray-900">
           <h6 className="text-accent text-center text-xl font-semibold">A small favor</h6>
           <p className="text-fore-subtle mx-auto mt-2 text-center">
@@ -54,7 +54,7 @@ export default function Feedback() {
                   (Optional) Email
                 </label>
                 <input
-                  className="border-back-subtle bg-back-primary focus:border-accent text-primary mt-1 block w-full rounded-md border p-3 outline-none disabled:opacity-50"
+                  className="border-back-subtle bg-back-primary focus:border-blue-600 focus:border-2 text-primary mt-1 block w-full rounded-md border p-3 outline-none disabled:opacity-50"
                   placeholder="hey@email.com"
                   name='email'
                   onChange={handleInputChange}
@@ -65,7 +65,7 @@ export default function Feedback() {
                   (Optional) Twitter Handle
                 </label>
                 <input
-                  className="border-back-subtle bg-back-primary focus:border-accent text-primary mt-1 block w-full rounded-md border p-3 outline-none disabled:opacity-50"
+                  className="border-back-subtle bg-back-primary focus:border-blue-600 focus:border-2 text-primary mt-1 block w-full rounded-md border p-3 outline-none disabled:opacity-50"
                   placeholder="@twitter"
                   name='twitter'
                   onChange={handleInputChange}

@@ -14,8 +14,6 @@ import { useRouter } from 'next/router'
 const LayoutWrapper = ({ children }) => {
   const { asPath, pathname } = useRouter()
 
-  console.log(asPath, pathname)
-
   return (
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">

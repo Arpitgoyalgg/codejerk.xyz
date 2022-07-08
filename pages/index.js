@@ -20,6 +20,23 @@ export default function Home({ posts }) {
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
+        <div className="my-20">
+          <h1 className="text-7xl">
+            Hi, I'm <b className="text-blue-600">Arpit</b>.
+          </h1>
+          <p className="mt-10 mb-10 py-5 text-2xl">
+            I'm a web developer and an undergraduate engineering student in India. I am more into
+            Frontend development using React(Next.js) and Node.js.
+          </p>
+          <Link href="/about">
+            <p>
+              <a className="text-2xl text-pink-600 hover:bg-pink-400 hover:text-white">
+                More about me &rarr;
+              </a>
+            </p>
+          </Link>
+        </div>
+
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Latest

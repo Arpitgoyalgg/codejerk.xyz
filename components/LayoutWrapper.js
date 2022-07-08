@@ -6,8 +6,16 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
+import Contact from './Contact'
+import Feedback from './Feedback'
+
+import { useRouter } from 'next/router'
 
 const LayoutWrapper = ({ children }) => {
+  const { asPath, pathname } = useRouter()
+
+  console.log(asPath, pathname)
+
   return (
     <SectionContainer>
       <div className="flex h-screen flex-col justify-between">
@@ -45,6 +53,9 @@ const LayoutWrapper = ({ children }) => {
           </div>
         </header>
         <main className="mb-auto">{children}</main>
+
+        {pathname === '/blog/[...slug]' ? <Feedback /> : <Contact />}
+
         <Footer />
       </div>
     </SectionContainer>

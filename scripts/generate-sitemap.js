@@ -1,55 +1,38 @@
 const fs = require('fs')
+
 const globby = require('globby')
-const matter = require('gray-matter')
 const prettier = require('prettier')
-const siteMetadata = require('../data/siteMetadata')
 
 ;(async () => {
-  const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
+  const prettierCfg = await prettier.resolveConfig('./.prettierrc')
   const pages = await globby([
-    'pages/*.js',
-    'pages/*.tsx',
-    'data/blog/**/*.mdx',
-    'data/blog/**/*.md',
-    'public/tags/**/*.xml',
-    '!pages/_*.js',
-    '!pages/_*.tsx',
-    '!pages/api',
+    'src/pages/**/*.tsx',
+    'content/**/*.mdx',
+    '!src/pages/_*.tsx',
+    '!src/pages/404.tsx',
+    '!src/pages/blog/[slug].tsx',
   ])
 
   const sitemap = `
         <?xml version="1.0" encoding="UTF-8"?>
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             ${pages
-              .map((page) => {
-                // Exclude drafts from the sitemap
-                if (page.search('.md') >= 1 && fs.existsSync(page)) {
-                  const source = fs.readFileSync(page, 'utf8')
-                  const fm = matter(source)
-                  if (fm.data.draft) {
-                    return
-                  }
-                  if (fm.data.canonicalUrl) {
-                    return
-                  }
-                }
+              .map(page => {
                 const path = page
-                  .replace('pages/', '/')
-                  .replace('data/blog', '/blog')
-                  .replace('public/', '/')
-                  .replace('.js', '')
+                  .replace('src/pages', '')
+                  .replace('content', '')
                   .replace('.tsx', '')
                   .replace('.mdx', '')
-                  .replace('.md', '')
-                  .replace('/feed.xml', '')
-                const route = path === '/index' ? '' : path
-
-                if (page.search('pages/404.') > -1 || page.search(`pages/blog/[...slug].`) > -1) {
-                  return
-                }
+                  .replace('/index', '')
                 return `
                         <url>
-                            <loc>${siteMetadata.siteUrl}${route}</loc>
+                            <loc>${`https://jeffjadulco.com${path}`}</loc>
+                            <changefreq>${
+                              path.includes('/blog') ? 'monthly' : 'daily'
+                            }</changefreq>
+                            <priority>${
+                              path.includes('/blog') ? 0.7 : 0.2
+                            }</priority>
                         </url>
                     `
               })
@@ -58,10 +41,9 @@ const siteMetadata = require('../data/siteMetadata')
     `
 
   const formatted = prettier.format(sitemap, {
-    ...prettierConfig,
+    ...prettierCfg,
     parser: 'html',
   })
 
-  // eslint-disable-next-line no-sync
   fs.writeFileSync('public/sitemap.xml', formatted)
 })()

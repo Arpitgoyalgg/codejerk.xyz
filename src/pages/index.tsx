@@ -5,21 +5,21 @@ import { Blob } from '@/components/atoms'
 import { SEO } from '@/components/seo'
 import { Blog24, Project24 } from '@/components/icons'
 import { PostList } from '@/components/postList'
-import { ProjectList } from '@/components/projectList'
+// import { ProjectList } from '@/components/projectList'
 import { Contact } from '@/components/contact'
 import { getAllFrontMatters } from '@/lib/mdx'
-import { getProjects } from '@/lib/notion'
+// import { getProjects } from '@/lib/notion'
 import avatar from '../../public/images/the-avatar.png'
 
 import type { Frontmatter } from '@/types/frontmatter'
-import type { Project } from '@/types/project'
+// import type { Project } from '@/types/project'
 
 interface IndexPageProps {
   posts: Frontmatter[]
-  projects: Project[]
+  // projects: Project[]
 }
 
-export default function IndexPage({ posts, projects }: IndexPageProps) {
+export default function IndexPage({ posts }: IndexPageProps) {
   return (
     <Fragment>
       <SEO />
@@ -54,7 +54,7 @@ export default function IndexPage({ posts, projects }: IndexPageProps) {
         </span>
       </div>
       <PostList posts={posts} />
-      <div className="flex items-center mt-24 mb-8 space-x-3">
+      {/* <div className="flex items-center mt-24 mb-8 space-x-3">
         <span className="p-3 rounded-full bg-back-subtle">
           <Project24 />
         </span>
@@ -62,7 +62,7 @@ export default function IndexPage({ posts, projects }: IndexPageProps) {
           PROJECTS
         </span>
       </div>
-      <ProjectList projects={projects} />
+      <ProjectList projects={projects} /> */}
       <Contact />
     </Fragment>
   )
@@ -70,9 +70,9 @@ export default function IndexPage({ posts, projects }: IndexPageProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllFrontMatters()
-  const projects = await getProjects()
+  // const projects = await getProjects()
 
   return {
-    props: { posts, projects: projects.filter(p => p.type === 'Open Source') },
+    props: { posts },
   }
 }

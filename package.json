@@ -1,9 +1,9 @@
 {
-  "name": "jeffjadulco.com",
+  "name": "codejerk.xyz",
   "private": true,
   "description": "My personal website made using Next.js",
   "version": "2.0.0",
-  "author": "Jeff Jadulco <hey@jeffjadulco.com>",
+  "author": "Arpit Goyal <arpitgoyalgg@gmail.com>",
   "dependencies": {
     "@formspree/react": "^2.2.3",
     "next": "^11.1.0",
@@ -52,6 +52,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jeffjadulco/jeffjadulco.com.git"
+    "url": "https://github.com/arpitgoyalgg/codejerk.xyz.git"
   }
 }

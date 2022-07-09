@@ -40,44 +40,105 @@ export default function About() {
           <About24 />
         </span>
         <h1 className="mt-3 mb-2 text-2xl font-bold tracking-tight text-accent">
-          About Me
+          Short Intro
         </h1>
         <article className="max-w-2xl min-w-0 text-base lg:text-lg text-fore-subtle">
           <mdx.p>
-            I'm Jeff Jadulco, I work full-time as a game programmer at&nbsp;
-            <mdx.a href="https://secret6.com">Secret 6, Inc</mdx.a>. In my free
-            time, I study front-end development with React. My goal is to write
-            useful apps and contribute to open source projects while working a
-            full-time job.
+            I am a guy 🙂 . Started with web development as the primary domain
+            and still stuck there. I also work with cloud sometimes as it is
+            somewhat necessary to have an understanding of cloud to work with
+            web efficienty. I love Netflix, deep space and music(pop,mostly).
           </mdx.p>
-          <mdx.h3>Why make this website?</mdx.h3>
+          <mdx.h3>Detailed Intro</mdx.h3>
           <mdx.p>
-            I made this website to learn what actually goes into web
-            development. From planning, design, development, launch, and
-            maintenance. For sure there are other things that I have yet to
-            encounter, and I’m ready to learn them. This also serves a
-            motivation for me to continue making projects because now I finally
-            have a place to showcase them.
+            My name is Arpit Goyal, a university student trying to score an
+            Computer Science degree. I had Computer Science in high school but
+            never got the hang of it until in later high school I discovered the
+            CS50 course and the amazing professor{' '}
+            <mdx.a href="https://cs.harvard.edu/malan/">David J. Malan</mdx.a>.
+            Well, by discovered I mean on Internet, not in person 😂 (no way I
+            can get into Harvard. Still wish I could visit there sometime). I
+            don't have a course completion certificate because I never really
+            officially enrolled in the course but did take it. Then I moved on
+            to Web Development and have been doing it ever since (July 2019).
           </mdx.p>
-          <mdx.h3>Why write a blog?</mdx.h3>
           <mdx.p>
-            My <mdx.a href="/blog/welcome">first blog post</mdx.a> explained it.
-            I'd be happy if you read it 😀
+            My most recent work was with{' '}
+            <mdx.a href="https://formidium.com/">Formidium</mdx.a> where I
+            worked as a Graduate Engineering Trainee in the FrontEnd team. It
+            was truely a great experience and I learned a lot.
+            <br />I had to leave after 7 months as my univeristy went offline on
+            full time basis after COVID-19.
+          </mdx.p>
+          <mdx.p>
+            I also sucessfully completed an Intership as full-stack developer at{' '}
+            <mdx.a href="https://www.verihired.com/">Verihired</mdx.a>. Although
+            I was hired as a Python backend developer, they later got me into
+            the frontend team too as I knew React and State Mangement.
+            <br />
+            The company never really launched officially due to conflicts
+            between the founders.
+          </mdx.p>
+          <h1 className="mt-3 mb-2 text-2xl font-bold tracking-tight text-accent">
+            Other Interests (outside of work)
+          </h1>
+          <mdx.p>
+            I am a Deep Space fan first, Netflix fan second and Music fan third.
+            These three are literally the only things I do when not working.
+            Connect with me on{' '}
+            <mdx.a href="https://twitter.com/arpitgoyalgg">Twitter</mdx.a> if
+            you wanna talk about anything.
+          </mdx.p>
+          <mdx.h3>Why this Portfolio and Blog site?</mdx.h3>
+          <mdx.p>
+            Well I just wanted to do it for a long time and finally did. This is
+            a site made using Next.js. I work with Next.js a lot so it was the
+            only thing that came to my mind when the idea hit.
           </mdx.p>
           <mdx.h3>What else?</mdx.h3>
           <mdx.p>
-            When I’m not programming, I endlessly browse Reddit (
-            <mdx.a href="https://www.reddit.com/r/gamedev/">r/gamedev</mdx.a>,{' '}
-            <mdx.a href="https://www.reddit.com/r/formula1/">r/formula1</mdx.a>,{' '}
-            <mdx.a href="https://www.reddit.com/r/animalsbeingderps/">
-              r/animalsbeingderps
+            The games I currently play
+            <ul className="my-5">
+              <li className="ml-5">
+                <mdx.a>Clash of clans</mdx.a>
+              </li>
+              <li className="ml-5">
+                <mdx.a>PUBG</mdx.a>
+              </li>
+            </ul>
+            I am crazy about Clash of Clans. If you are too, join my{' '}
+            <mdx.a href="https://link.clashofclans.com/en?action=OpenClanProfile&tag=QU2UJ28U">
+              clan (Level 15)
             </mdx.a>
-            ). I also love watching{' '}
-            <mdx.a href="https://letterboxd.com/jeffjadulco/">movies</mdx.a> and
-            listening to{' '}
-            <mdx.a href="https://open.spotify.com/user/jeffjads">music</mdx.a>.
-            You can catch me playing games sometimes, I play as xKore, xKored,
-            or xKoreddd.
+            . We can go crazy together!🤩
+          </mdx.p>
+          <mdx.h3>Inspiration of the Blog</mdx.h3>
+          <mdx.p>
+            The person I got the inspiration from is{' '}
+            <mdx.a href="https://flaviocopes.com/">Flavio Copes</mdx.a>.
+          </mdx.p>
+          <mdx.h3>My Social links</mdx.h3>
+          <mdx.p>
+            <ul className="mb-5">
+              <li className="ml-3">
+                <mdx.a href="https://www.linkedin.com/in/arpitgoyalgg/">
+                  Linkedin
+                </mdx.a>
+              </li>
+              <li className="ml-3">
+                <mdx.a href="https://github.com/Arpitgoyalgg">GitHub</mdx.a>
+              </li>
+              <li className="ml-3">
+                <mdx.a href="https://twitter.com/arpitgoyalgg">Twitter</mdx.a>
+              </li>
+            </ul>
+            If my work has helped you in any way, consider buying me coffee(s).
+
+            <ul className="my-5">
+              <li className="ml-3"><mdx.a href='https://www.buymeacoffee.com/arpitgoyalgg'>BuyMeaCoffee</mdx.a></li>
+            </ul>
+
+
           </mdx.p>
         </article>
         {/* <h3 className="mb-4 text-2xl font-bold leading-tight mt-14 text-accent">

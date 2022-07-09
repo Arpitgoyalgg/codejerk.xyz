@@ -49,9 +49,9 @@ export function Header() {
             </div>
             <div className="inline ml-3 text-base font-semibold sm:hidden">
               <span className="group-hover:text-accent text-fore-subtle">
-                jeffjadulco
+                codejerk
               </span>
-              <span className="text-accent">.com</span>
+              <span className="text-accent">.xyz</span>
             </div>
           </a>
         </Link>

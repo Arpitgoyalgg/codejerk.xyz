@@ -1,13 +1,13 @@
 const siteMetadata = {
-  title: `Jeff Jadulco`,
-  description: `Jeff Jadulco is a game and javascript developer`,
-  author: `Jeff Jadulco`,
+  title: `Arpit Goyal`,
+  description: `Arpit Goyal is a web developer and a AWS certified cloud practitioner.`,
+  author: `Arpit Goyal`,
   siteUrl:
     process.env.NODE_ENV === 'development'
       ? `https://dev.jeffjadulco.com`
       : `https://jeffjadulco.com`,
   image: `/static/og/default.png`,
-  twitterUsername: `@jeffjadulco`,
+  twitterUsername: `@arpitgoyalgg`,
 }
 
 export { siteMetadata }

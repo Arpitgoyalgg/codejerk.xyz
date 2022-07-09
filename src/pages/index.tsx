@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import Link from 'next/link'
 import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import { Blob } from '@/components/atoms'
@@ -25,9 +26,13 @@ export default function IndexPage({ posts }: IndexPageProps) {
       <SEO />
       <div className="flex flex-col-reverse items-center mt-12 lg:flex-row lg:justify-between lg:space-x-6">
         <p className="max-w-3xl mt-12 text-3xl font-semibold lg:mt-0 sm:text-4xl sm:text-left md:text-center lg:text-left">
-          Hi, I’m Jeff. I’m an experienced game developer with deep interest in
-          modern web development.
+          Hi, I’m Arpit. I’m a web developer and an AWS certified Cloud
+          Practitioner.
+          <br />
+          <br/>
+          Also an undergrad engineering student in India.
         </p>
+
         <div className="relative">
           <Blob />
           <div className="absolute top-0 flex items-center justify-center w-full h-full">
@@ -45,6 +50,13 @@ export default function IndexPage({ posts }: IndexPageProps) {
           </div>
         </div>
       </div>
+      <Link href="/about">
+        <p className="mt-5">
+          <a className="text-2xl text-pink-600 hover:bg-pink-400 hover:text-white">
+            More about me &rarr;
+          </a>
+        </p>
+      </Link>
       <div className="flex items-center mt-64 mb-8 space-x-3">
         <span className="p-3 rounded-full bg-back-subtle">
           <Blog24 />

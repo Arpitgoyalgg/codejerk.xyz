@@ -90,6 +90,7 @@ export const Blob = () => {
 export const Input = ({
   labelText,
   name,
+  onChange,
   ...props
 }: { labelText: string } & InputHTMLAttributes<HTMLInputElement>) => {
   return (
@@ -103,6 +104,7 @@ export const Input = ({
       <input
         className="block w-full p-3 mt-1 border rounded-md outline-none border-back-subtle bg-back-primary focus:border-accent text-primary disabled:opacity-50"
         name={name}
+        onChange={onChange}
         {...props}
       />
     </div>
@@ -112,6 +114,7 @@ export const Input = ({
 export const TextArea = ({
   labelText,
   name,
+  onChange,
   ...props
 }: { labelText: string } & TextareaHTMLAttributes<HTMLTextAreaElement>) => {
   return (
@@ -126,6 +129,7 @@ export const TextArea = ({
         className="block w-full p-3 mt-1 border rounded-md outline-none border-back-subtle bg-back-primary focus:border-accent text-fore-primary disabled:opacity-50"
         style={{ minHeight: '80px' }}
         name={name}
+        onChange={onChange}
         {...props}
       />
     </div>

@@ -1,18 +1,72 @@
 import React from 'react'
-import { useForm } from '@formspree/react'
 import { ExtLink, Input, TextArea } from './atoms'
 import type { Frontmatter } from '@/types/frontmatter'
+import { supabase } from '../utils/supabaseClient.js'
 
 interface Props {
   post: Frontmatter
 }
 
-export function Feedback({ post }: Props) {
-  const [state, handleSubmit] = useForm('feedbackForm')
+export function Feedback() {
+  const [submitState, setSubmitState] = React.useState({
+    submitting: false,
+    submitted: false,
+    errors: '',
+  })
 
-  const submitForm = e => {
-    handleSubmit(e)
-    e.target.reset()
+  const [messageVaildation, setMessageValidation] = React.useState(false)
+
+  const initialValues = {
+    message: '',
+    email: '',
+    twitter: '',
+  }
+
+  const [values, setValues] = React.useState(initialValues)
+
+  const handleInputChange = e => {
+    const { name, value } = e.target
+
+    setValues({
+      ...values,
+      [name]: value,
+    })
+  }
+
+  async function submitData() {
+
+    console.log(submitState)
+    const { data, error } = await supabase.from('feedback').insert([
+      {
+        message: values.message,
+        email: values.email,
+        twitter: values.twitter,
+      },
+    ])
+    if (error) {
+      setSubmitState({ submitting: false, submitted: false, errors: error })
+    } else {
+      setSubmitState({ submitting: false, submitted: true, errors: error })
+    }
+
+    console.log(submitState)
+  }
+
+  const handleSubmit = () => {
+
+    if(values.message.length > 10) {
+      setMessageValidation(true)
+    }
+    else {
+      return
+    }
+    
+    setSubmitState(
+      { submitting: true, submitted: false, errors: '' },
+      submitData()  
+    )
+
+    console.log(submitState)
   }
 
   return (
@@ -25,21 +79,15 @@ export function Feedback({ post }: Props) {
           Is this post confusing? Did I make a mistake? Let me know if you have
           any feedback and suggestions!
         </p>
-        <form onSubmit={submitForm} className="grid grid-cols-1 gap-3 mt-3">
-          <input
-            type="hidden"
-            value={`New feedback on ${post.title}`}
-            id={post.title}
-            name="_subject"
-            readOnly
-          />
+        <div className="grid grid-cols-1 gap-3 mt-3">
           <TextArea
             labelText="Message"
             id="message"
             name="message"
             placeholder="What's your feedback?"
             required
-            disabled={state.submitting}
+            disabled={submitState.submitting}
+            onChange={handleInputChange}
           />
           <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
             <Input
@@ -48,7 +96,8 @@ export function Feedback({ post }: Props) {
               name="email"
               placeholder="hey@email.com"
               type="email"
-              disabled={state.submitting}
+              disabled={submitState.submitting}
+              onChange={handleInputChange}
             />
             <Input
               labelText="(Optional) Twitter Handle"
@@ -56,33 +105,42 @@ export function Feedback({ post }: Props) {
               name="twitter"
               placeholder="@twitter"
               type="twitter"
-              disabled={state.submitting}
+              disabled={submitState.submitting}
+              onChange={handleInputChange}
             />
           </div>
-          {!state.succeeded && (
+          {!submitState.succeeded && (
             <button
-              disabled={state.submitting}
+              disabled={submitState.submitting}
               type="submit"
               className="py-3 font-semibold rounded-md bg-gradient-to-r from-teal-500 to-blue-500 bg-200 bg-left hover:bg-right transition-all duration-[0.5s] ease-out text-back-secondary focus-visible:outline-accent disabled:opacity-50"
+              onClick={handleSubmit}
             >
-              {state.submitting ? 'Submitting feedback...' : 'Send Feedback 😊'}
+              {submitState.submitting
+                ? 'Submitting feedback...'
+                : 'Send Feedback 😊'}
             </button>
           )}
-          {!state.submitting && state.succeeded && (
+          {!messageVaildation && (
+            <p className="mt-3 font-semibold text-center text-fore-secondary">
+              Please enter a message longer than 10 characters and understandable.
+            </p>
+          )}
+          {!submitState.submitting && submitState.submitted && (
             <p className="mt-3 font-semibold text-center text-fore-secondary">
               Thanks for taking the time to give a feedback!
             </p>
           )}
-          {!state.submitting && state.errors.length > 0 && (
+          {!submitState.submitting && submitState.errors && (
             <p className="mt-3 font-medium text-center text-pink-500">
               I'm having errors sending your feedback. Alternatively, you can
               reach me out on Twitter:{' '}
-              <ExtLink link="https://twitter.com/jeffjadulco">
-                @jeffjadulco
+              <ExtLink link="https://twitter.com/arpitgoyalgg">
+                @arpitgoyalgg
               </ExtLink>
             </p>
           )}
-        </form>
+        </div>
       </div>
     </div>
   )

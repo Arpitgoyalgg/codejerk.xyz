@@ -19,8 +19,7 @@ export default function Blog({ posts }: { posts: Frontmatter[] }) {
       </h1>
 
       <p className="max-w-md mb-12 text-fore-subtle">
-        I <em className="italic">sometimes</em> write about things I learn in
-        web development and also stuff that I find interesting.
+        I <em className="italic">write</em>  about things that I find interesting and worth sharing. Most things relate to web development but who knows?😉
       </p>
       <PostList posts={posts} />
       <Contact />

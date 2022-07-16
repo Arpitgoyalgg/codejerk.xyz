@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { GetStaticProps } from 'next'
-import { About24 } from '@/components/icons'
+import { About24, GitHub24, MailAt24, Twitter24 } from '@/components/icons'
 import { Contact } from '@/components/contact'
 import { SEO } from '@/components/seo'
 import { components as mdx } from '@/components/mdxComponents'
@@ -100,10 +100,12 @@ export default function About() {
             The games I currently play
             <ul className="my-5">
               <li className="ml-5">
-                <mdx.a>Clash of clans</mdx.a>
+                <mdx.a href="https://clashofclans.com/">Clash of clans</mdx.a>
               </li>
               <li className="ml-5">
-                <mdx.a>PUBG</mdx.a>
+                <mdx.a href="https://www.battlegroundsmobileindia.com/">
+                  PUBG
+                </mdx.a>
               </li>
             </ul>
             I am crazy about Clash of Clans. If you are too, join my{' '}
@@ -119,26 +121,55 @@ export default function About() {
           </mdx.p>
           <mdx.h3>My Social links</mdx.h3>
           <mdx.p>
-            <ul className="mb-5">
+            <ul className="mb-5 flex">
               <li className="ml-3">
                 <mdx.a href="https://www.linkedin.com/in/arpitgoyalgg/">
-                  Linkedin
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="icon icon-tabler icon-tabler-brand-linkedin"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    {' '}
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />{' '}
+                    <rect x="4" y="4" width="16" height="16" rx="2" />{' '}
+                    <line x1="8" y1="11" x2="8" y2="16" />{' '}
+                    <line x1="8" y1="8" x2="8" y2="8.01" />{' '}
+                    <line x1="12" y1="16" x2="12" y2="11" />{' '}
+                    <path d="M16 16v-3a2 2 0 0 0 -4 0" />{' '}
+                  </svg>
                 </mdx.a>
               </li>
               <li className="ml-3">
-                <mdx.a href="https://github.com/Arpitgoyalgg">GitHub</mdx.a>
+                <mdx.a href="https://github.com/Arpitgoyalgg">
+                  <GitHub24 />
+                </mdx.a>
               </li>
               <li className="ml-3">
-                <mdx.a href="https://twitter.com/arpitgoyalgg">Twitter</mdx.a>
+                <mdx.a href="https://twitter.com/arpitgoyalgg">
+                  <Twitter24 />
+                </mdx.a>
+              </li>
+              <li className="ml-3">
+                <mdx.a href="mailto:arpitgoyalgg@gmail.com">
+                  <MailAt24/>
+                </mdx.a>
               </li>
             </ul>
             If my work has helped you in any way, consider buying me coffee(s).
-
             <ul className="my-5">
-              <li className="ml-3"><mdx.a href='https://www.buymeacoffee.com/arpitgoyalgg'>BuyMeaCoffee</mdx.a></li>
+              <li className="ml-3 w-52">
+                <mdx.a href="https://www.buymeacoffee.com/arpitgoyalgg">
+                  <img src='/images/buymeacoffee.png'/>
+                </mdx.a>
+              </li>
             </ul>
-
-
           </mdx.p>
         </article>
         {/* <h3 className="mb-4 text-2xl font-bold leading-tight mt-14 text-accent">

@@ -65,7 +65,7 @@ export default function IndexPage({ posts }: IndexPageProps) {
           A few of the recent posts
         </span>
       </div>
-      <PostList posts={posts} />
+      <PostList posts={posts} homePage={true} />
       {/* <div className="flex items-center mt-24 mb-8 space-x-3">
         <span className="p-3 rounded-full bg-back-subtle">
           <Project24 />

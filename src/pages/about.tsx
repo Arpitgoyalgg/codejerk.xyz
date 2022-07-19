@@ -57,14 +57,17 @@ export default function About() {
             CS50 course and the amazing professor{' '}
             <mdx.a href="https://cs.harvard.edu/malan/">David J. Malan</mdx.a>.
             Well, by discovered I mean on Internet, not in person 😂 (no way I
-            can get into Harvard. Still wish I could visit there sometime). I
+            can get into Harvard. Still wish I could visit there someday). I
             don't have a course completion certificate because I never really
             officially enrolled in the course but did take it. Then I moved on
             to Web Development and have been doing it ever since (July 2019).
           </mdx.p>
+          <mdx.h2>
+            Work experience
+          </mdx.h2>
           <mdx.p>
-            My most recent work was with{' '}
-            <mdx.a href="https://formidium.com/">Formidium</mdx.a> where I
+            My most recent professional work experience was with{' '}
+            <mdx.a href="https://formidium.com/"><b>Formidium</b></mdx.a> where I
             worked as a Graduate Engineering Trainee in the FrontEnd team. It
             was truely a great experience and I learned a lot.
             <br />I had to leave after 7 months as my univeristy went offline on

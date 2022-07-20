@@ -45,7 +45,7 @@ export default function IndexPage({ posts }: IndexPageProps) {
               />
             </div>
           </div>
-          <div className='mt-2 ml-2'>Here's someone greeting. Cute, right?</div>
+          <div className='mt-2 ml-2'>Here's someone greeting. <span className="text-pink-600"><b>Cute, right?</b></span></div>
         </div>
       </div>
       <Link href="/about">

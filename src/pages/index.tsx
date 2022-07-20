@@ -66,7 +66,7 @@ export default function IndexPage({ posts }: IndexPageProps) {
         </span>
       </div>
       <PostList posts={posts} homePage={true} />
-      <Link href="/about">
+      <Link href="/blog">
         <p className="mt-5">
           <a className="text-2xl text-pink-600 hover:bg-pink-400 hover:text-white">
             All posts &rarr;

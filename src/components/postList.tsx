@@ -30,7 +30,6 @@ export function PostList({
   posts: Frontmatter[]
   showHeading?: boolean
 }) {
-  console.log(posts)
   if (homePage && posts.length>10) {
     posts.length = 10
   }

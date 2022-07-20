@@ -88,6 +88,10 @@
   --color-code-regex: hsl(160, 80%, 60%);
 }
 
+.dark b {
+  color: rgba(219, 39, 119, 1);
+}
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';

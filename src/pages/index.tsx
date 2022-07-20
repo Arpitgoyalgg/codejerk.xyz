@@ -23,7 +23,7 @@ export default function IndexPage({ posts }: IndexPageProps) {
   return (
     <Fragment>
       <SEO />
-      <div className="flex flex-col-reverse items-center mt-12 lg:flex-row lg:justify-between lg:space-x-6">
+      <div className="flex flex-col-reverse items-center md:mt-12 lg:flex-row lg:justify-between lg:space-x-6">
         <p className="max-w-3xl mt-12 text-3xl font-semibold lg:mt-0 sm:text-4xl sm:text-left md:text-center lg:text-left">
           Hi, I’m Arpit. I’m a web developer and an AWS Certified Cloud
           Practitioner.
@@ -55,7 +55,7 @@ export default function IndexPage({ posts }: IndexPageProps) {
           </a>
         </p>
       </Link>
-      <div className="flex items-center mt-64 mb-8 space-x-3">
+      <div className="flex items-center mt-40 md:mt-64 mb-8 space-x-3">
         <span className="p-3 rounded-full bg-back-subtle">
           <Blog24 />
         </span>

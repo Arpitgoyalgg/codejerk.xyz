@@ -89,7 +89,7 @@
 }
 
 .dark b {
-  color: rgba(219, 39, 119, 1);
+  color: rgba(219, 39, 119, 1); /* tailwind's text-pink-600 */
 }
 
 @import 'tailwindcss/base';

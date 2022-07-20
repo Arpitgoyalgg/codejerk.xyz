@@ -10,7 +10,6 @@ import { PostList } from '@/components/postList'
 import { Contact } from '@/components/contact'
 import { getAllFrontMatters } from '@/lib/mdx'
 // import { getProjects } from '@/lib/notion'
-import avatar from '../../public/images/the-avatar.png'
 
 import type { Frontmatter } from '@/types/frontmatter'
 // import type { Project } from '@/types/project'
@@ -29,25 +28,24 @@ export default function IndexPage({ posts }: IndexPageProps) {
           Hi, I’m Arpit. I’m a web developer and an AWS Certified Cloud
           Practitioner.
           <br />
-          <br/>
+          <br />
           Also an undergrad engineering student in India.
         </p>
 
-        <div className="relative">
-          <Blob />
-          <div className="absolute top-0 flex items-center justify-center w-full h-full">
-            <div className="w-32 h-32 overflow-hidden rounded-full md:h-40 md:w-40 lg:h-48 lg:w-48">
+        <div>
+          <div className="flex items-center justify-center w-full h-full">
+            <div className="w-32 h-32 overflow-hidden rounded-lg md:h-40 md:w-40 lg:h-48 lg:w-48">
               <Image
-                src={avatar}
+                src="/images/giphy.webp"
                 alt="My avatar"
                 width={256}
                 height={256}
                 quality={100}
                 priority={true}
-                placeholder="blur"
               />
             </div>
           </div>
+          <div className='mt-2 ml-2'>Here's someone greeting. Cute, right?</div>
         </div>
       </div>
       <Link href="/about">

@@ -44,10 +44,8 @@ export default function About() {
         </h1>
         <article className="max-w-2xl min-w-0 text-base lg:text-lg text-fore-subtle">
           <mdx.p>
-            I am a guy 🙂 . Started with web development as the primary domain
-            and still stuck there. I also work with cloud sometimes as it is
-            somewhat necessary to have an understanding of cloud to work with
-            web efficienty. I love Netflix, deep space and music(pop,mostly).
+            I am a guy 🙂 . Started with <b>web development</b> as the primary domain
+            and still stuck there. I also work with cloud and have achieved the <b>AWS Cloud Practitioner Ceritificate</b>. I love Netflix, deep space and music(pop,mostly).
           </mdx.p>
           <mdx.h3>Detailed Intro</mdx.h3>
           <mdx.p>

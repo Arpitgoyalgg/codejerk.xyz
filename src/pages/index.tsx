@@ -63,12 +63,12 @@ export default function IndexPage({ posts }: IndexPageProps) {
         </p>
       </Link>
       <CustomArrowDown />
-      <div className="mt-52">
+      <div className="mt-46">
         <Quote />
       </div>
       <CustomArrowDown />
 
-      <div className="flex items-center mt-40 md:mt-64 mb-8 space-x-3">
+      <div className="flex items-center mt-40 md:mt-52 mb-8 space-x-3">
         <span className="p-3 rounded-full bg-back-subtle">
           <Blog24 />
         </span>

@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import Link from 'next/link'
 import { GetStaticProps } from 'next'
 import Image from 'next/image'
@@ -21,7 +21,48 @@ interface IndexPageProps {
   // projects: Project[]
 }
 
-export default function IndexPage({ posts }: IndexPageProps) {
+export default function IndexPage({
+  posts,
+  geoLocationData,
+  binData,
+}: IndexPageProps) {
+  const [count, setCount] = useState(binData.record.count)
+  const geo = geoLocationData
+  const [existingBinData, setExistingBinData] = useState(binData.record)
+
+  // fetch geolcation data
+  function handleCountCountry() {
+    // if (count != 0) {
+    //   return
+    // }
+    setCount(count + 1)
+  }
+
+  useEffect(() => {
+    console.log('Do something after counter has changed', count)
+    let prevGeo = existingBinData.geoData
+    prevGeo.push(geo)
+    console.log(prevGeo)
+    let newData = {
+      ...existingBinData,
+      geoData: prevGeo,
+      count: count,
+    }
+    console.log(newData)
+
+
+    const requestOptions = {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newData),
+    }
+    fetch('https://api.jsonbin.io/v3/b/62d97a21248d43754ffe585b', requestOptions)
+      .then(response => response.json())
+      .then(data => console.log(data))
+
+
+  }, [count])
+
   return (
     <Fragment>
       <SEO />
@@ -52,6 +93,12 @@ export default function IndexPage({ posts }: IndexPageProps) {
             <span className="text-pink-600">
               <b>Cute, right?</b>
             </span>
+            <div
+              className="text-center mt-2 animate-bounce"
+              onClick={handleCountCountry}
+            >
+              💖 {count}
+            </div>
           </div>
         </div>
       </div>
@@ -102,7 +149,15 @@ export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllFrontMatters()
   // const projects = await getProjects()
 
+  const resGeo = await fetch('https://geolocation-db.com/json/')
+  const geoLocationData = await resGeo.json()
+
+  const resBin = await fetch(
+    'https://api.jsonbin.io/v3/b/62d97a21248d43754ffe585b/latest'
+  )
+  const binData = await resBin.json()
+
   return {
-    props: { posts },
+    props: { posts, geoLocationData, binData },
   }
 }

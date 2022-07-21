@@ -6,6 +6,8 @@ import { Blob } from '@/components/atoms'
 import { SEO } from '@/components/seo'
 import { Blog24, Project24 } from '@/components/icons'
 import { PostList } from '@/components/postList'
+import Quote from '@/components/quote'
+import { CustomArrowDown } from '@/components/atoms'
 // import { ProjectList } from '@/components/projectList'
 import { Contact } from '@/components/contact'
 import { getAllFrontMatters } from '@/lib/mdx'
@@ -45,7 +47,12 @@ export default function IndexPage({ posts }: IndexPageProps) {
               />
             </div>
           </div>
-          <div className='mt-2 ml-2'>Here's someone greeting. <span className="text-pink-600"><b>Cute, right?</b></span></div>
+          <div className="mt-2 ml-2">
+            Here's someone greeting.{' '}
+            <span className="text-pink-600">
+              <b>Cute, right?</b>
+            </span>
+          </div>
         </div>
       </div>
       <Link href="/about">
@@ -55,6 +62,12 @@ export default function IndexPage({ posts }: IndexPageProps) {
           </a>
         </p>
       </Link>
+      <CustomArrowDown />
+      <div className="mt-52">
+        <Quote />
+      </div>
+      <CustomArrowDown />
+
       <div className="flex items-center mt-40 md:mt-64 mb-8 space-x-3">
         <span className="p-3 rounded-full bg-back-subtle">
           <Blog24 />

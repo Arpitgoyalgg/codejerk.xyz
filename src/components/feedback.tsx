@@ -58,6 +58,7 @@ export function Feedback() {
       setMessageValidation(true)
     }
     else {
+      setMessageValidation(false)
       return
     }
     
@@ -122,7 +123,7 @@ export function Feedback() {
             </button>
           )}
           {!messageVaildation && (
-            <p className="mt-3 font-semibold text-center text-fore-secondary">
+            <p className="mt-3 font-semibold text-center text-fore-secondary text-pink-500">
               Please enter a message longer than 10 characters and understandable.
             </p>
           )}

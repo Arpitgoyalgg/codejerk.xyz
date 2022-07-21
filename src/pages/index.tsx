@@ -30,7 +30,6 @@ export default function IndexPage({
   const geo = geoLocationData
   const [existingBinData, setExistingBinData] = useState(binData.record)
 
-  // fetch geolcation data
   function handleCountCountry() {
     // if (count != 0) {
     //   return
@@ -39,28 +38,25 @@ export default function IndexPage({
   }
 
   useEffect(() => {
-    console.log('Do something after counter has changed', count)
     let prevGeo = existingBinData.geoData
     prevGeo.push(geo)
-    console.log(prevGeo)
     let newData = {
       ...existingBinData,
       geoData: prevGeo,
       count: count,
     }
-    console.log(newData)
-
 
     const requestOptions = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newData),
     }
-    fetch('https://api.jsonbin.io/v3/b/62d97a21248d43754ffe585b', requestOptions)
+    fetch(
+      'https://api.jsonbin.io/v3/b/62d97a21248d43754ffe585b',
+      requestOptions
+    )
       .then(response => response.json())
-      .then(data => console.log(data))
-
-
+      .then(data => console.log('Getting sneaky, huh?'))
   }, [count])
 
   return (

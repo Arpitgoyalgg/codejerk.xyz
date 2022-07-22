@@ -77,8 +77,7 @@ export function Feedback() {
           A small favor
         </h6>
         <p className="mx-auto mt-2 text-center text-fore-subtle">
-          Is this post confusing? Did I make a mistake? Let me know if you have
-          any feedback and suggestions!
+          Is this post confusing? Did I make a mistake? Let me know your feedback and suggestions!
         </p>
         <div className="grid grid-cols-1 gap-3 mt-3">
           <TextArea

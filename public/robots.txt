@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://jeffjadulco.com/sitemap.xml
+Sitemap: https://codejerk.xyz/sitemap.xml

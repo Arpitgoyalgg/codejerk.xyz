@@ -22,7 +22,7 @@ export function SEO({ title, description, blog, ogImage }: SEOProps) {
     title: title || defaultTitle,
     titleTemplate: title
       ? `${title} | ${defaultTitle}`
-      : `${defaultTitle} | Game and Web Developer`,
+      : `${defaultTitle} | Web Developer and AWS Certified Cloud Practitioner`,
     description: description || defaultDescription,
     image: `${siteUrl}${blog ? ogImage : image}`,
     url: `${siteUrl}`,

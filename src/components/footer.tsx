@@ -37,7 +37,7 @@ export function Footer() {
               className="self-center text-xs tracking-wider md:self-end"
               aria-label="Copyright"
             >
-              © 2020 - 2021 Arpit Goyal. All Rights Reserved.
+              © 2021 - 2022 Arpit Goyal. All Rights Reserved.
             </span>
             <div className="flex flex-row items-center justify-center space-x-6 md:justify-end">
               <span>

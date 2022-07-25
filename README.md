@@ -6,7 +6,7 @@ This is a blog site. Below are the main technologies used in the making of this 
  - Supabase
  - JSONBIN
 
- Supabase and JSONBIN requires an account to operate.
+ [Supabase](https://supabase.com) and [JSONBIN](https://jsonbin.io) requires an account to operate.
 
  ## Supabase
 

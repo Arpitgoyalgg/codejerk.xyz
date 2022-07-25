@@ -15,3 +15,12 @@ This is a blog site. Below are the main technologies used in the making of this 
  Tables in `Codejerk` project - 
 
  - feedback - used to  collect the feedback data from users. The feedback form is only available on blog posts.
+
+
+## JSONBIN
+
+The account login is using `GitHub` SSO.
+
+Bins in JSONBIN - 
+
+ - `Codejerk dino love count` with Bin ID `62d97a21248d43754ffe585b` - used to collect home page dino love count data with geoData.

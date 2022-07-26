@@ -72,6 +72,7 @@ export default function BlogPost({
             {frontmatter.title}
           </h1>
           <Component components={components} />
+          <b>Below 👇 is a feedback form where you can send me your suggestions. I would love to hear from you!</b>
         </article>
       </div>
       <Feedback post={frontmatter} />

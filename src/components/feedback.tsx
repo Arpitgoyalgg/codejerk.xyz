@@ -34,7 +34,6 @@ export function Feedback() {
   }
 
   async function submitData() {
-    console.log(submitState)
     const { data, error } = await supabase.from('feedback').insert([
       {
         message: values.message,
@@ -48,7 +47,6 @@ export function Feedback() {
       setSubmitState({ submitting: false, submitted: true, errors: error })
     }
 
-    console.log(submitState)
     setValues(initialValues)
   }
 
@@ -64,8 +62,6 @@ export function Feedback() {
       { submitting: true, submitted: false, errors: '' },
       submitData()
     )
-
-    console.log(submitState)
   }
 
   return (

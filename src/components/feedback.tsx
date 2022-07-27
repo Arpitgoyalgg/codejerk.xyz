@@ -34,7 +34,6 @@ export function Feedback() {
   }
 
   async function submitData() {
-
     console.log(submitState)
     const { data, error } = await supabase.from('feedback').insert([
       {
@@ -50,21 +49,20 @@ export function Feedback() {
     }
 
     console.log(submitState)
+    setValues(initialValues)
   }
 
   const handleSubmit = () => {
-
-    if(values.message.length > 10) {
+    if (values.message.length > 10) {
       setMessageValidation(true)
-    }
-    else {
+    } else {
       setMessageValidation(false)
       return
     }
-    
+
     setSubmitState(
       { submitting: true, submitted: false, errors: '' },
-      submitData()  
+      submitData()
     )
 
     console.log(submitState)
@@ -77,13 +75,15 @@ export function Feedback() {
           A small favor
         </h6>
         <p className="mx-auto mt-2 text-center text-fore-subtle">
-          Is this post confusing? Did I make a mistake? Let me know your feedback and suggestions!
+          Is this post confusing? Did I make a mistake? Let me know your
+          feedback and suggestions!
         </p>
         <div className="grid grid-cols-1 gap-3 mt-3">
           <TextArea
             labelText="Message"
             id="message"
             name="message"
+            value={values.message}
             placeholder="What's your feedback?"
             required
             disabled={submitState.submitting}
@@ -94,6 +94,7 @@ export function Feedback() {
               labelText="(Optional) Email"
               id="email"
               name="email"
+              value={values.email}
               placeholder="hey@email.com"
               type="email"
               disabled={submitState.submitting}
@@ -103,6 +104,7 @@ export function Feedback() {
               labelText="(Optional) Twitter Handle"
               id="twitter"
               name="twitter"
+              value={values.twitter}
               placeholder="@twitter"
               type="twitter"
               disabled={submitState.submitting}
@@ -123,7 +125,8 @@ export function Feedback() {
           )}
           {!messageVaildation && (
             <p className="mt-3 font-semibold text-center text-fore-secondary text-pink-600 animate-pulse">
-              Please enter a message longer than 10 characters and understandable.
+              Please enter a message longer than 10 characters and
+              understandable.
             </p>
           )}
           {!submitState.submitting && submitState.submitted && (

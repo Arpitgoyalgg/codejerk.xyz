@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect } from 'react'
+import { Fragment, useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { GetStaticProps } from 'next'
 import Image from 'next/image'
@@ -29,6 +29,7 @@ export default function IndexPage({
   const [count, setCount] = useState(binData.record.count)
   const geo = geoLocationData
   const [existingBinData, setExistingBinData] = useState(binData.record)
+  const isMounted= useRef(false)
 
   function handleCountCountry() {
     // if (count != 0) {
@@ -38,12 +39,14 @@ export default function IndexPage({
   }
 
   useEffect(() => {
-    let prevGeo = existingBinData.geoData
+    if (isMounted.current) {
+      let prevGeo = existingBinData.geoData
     prevGeo.push(geo)
     let newData = {
       ...existingBinData,
-      geoData: prevGeo,
       count: count,
+      geoData: prevGeo,
+      
     }
 
     const requestOptions = {
@@ -57,6 +60,11 @@ export default function IndexPage({
     )
       .then(response => response.json())
       .then(data => console.log('Getting sneaky, huh?'))
+    }
+    else {
+      isMounted.current = true
+    }
+    
   }, [count])
 
   return (

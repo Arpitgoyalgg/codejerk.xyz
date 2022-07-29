@@ -26,9 +26,6 @@ export function PostList({
   posts,
   showHeading = false,
   homePage = false,
-}: {
-  posts: Frontmatter[]
-  showHeading?: boolean
 }) {
   if (homePage && posts.length>10) {
     posts.length = 10

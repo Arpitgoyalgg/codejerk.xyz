@@ -8,24 +8,16 @@ import { Blog24, Project24 } from '@/components/icons'
 import { PostList } from '@/components/postList'
 import Quote from '@/components/quote'
 import { CustomArrowDown } from '@/components/atoms'
-// import { ProjectList } from '@/components/projectList'
 import { Contact } from '@/components/contact'
 import { getAllFrontMatters } from '@/lib/mdx'
-// import { getProjects } from '@/lib/notion'
 
-import type { Frontmatter } from '@/types/frontmatter'
-// import type { Project } from '@/types/project'
 
-interface IndexPageProps {
-  posts: Frontmatter[]
-  // projects: Project[]
-}
 
 export default function IndexPage({
   posts,
   geoLocationData,
   binData,
-}: IndexPageProps) {
+}) {
   const [count, setCount] = useState(binData.record.count)
   const geo = geoLocationData
   const [existingBinData, setExistingBinData] = useState(binData.record)

@@ -1,11 +1,7 @@
 import React from 'react'
 import { ExtLink, Input, TextArea } from './atoms'
-import type { Frontmatter } from '@/types/frontmatter'
 import { supabase } from '../utils/supabaseClient.js'
 
-interface Props {
-  post: Frontmatter
-}
 
 export function Feedback() {
   const [submitState, setSubmitState] = React.useState({

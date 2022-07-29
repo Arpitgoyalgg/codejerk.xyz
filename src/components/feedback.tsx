@@ -42,9 +42,9 @@ export function Feedback() {
       },
     ])
     if (error) {
-      setSubmitState({ submitting: false, submitted: false, errors: error })
+      setSubmitState({ submitting: false, submitted: false, errors: '' })
     } else {
-      setSubmitState({ submitting: false, submitted: true, errors: error })
+      setSubmitState({ submitting: false, submitted: true, errors: '' })
     }
 
     setValues(initialValues)

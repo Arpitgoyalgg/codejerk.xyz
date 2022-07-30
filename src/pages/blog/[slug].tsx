@@ -75,7 +75,7 @@ export default function BlogPost({
           <b>Below 👇 is a feedback form where you can send me your suggestions. I would love to hear from you!</b>
         </article>
       </div>
-      <Feedback post={frontmatter} />
+      <Feedback />
     </Fragment>
   )
 }

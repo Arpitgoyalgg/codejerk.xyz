@@ -79,3 +79,12 @@
 //     },
 //   }
 // }
+
+
+export default function ProjectsDemoPage() {
+  return (
+    <>
+      <h1>Still in development</h1>
+    </>
+  )
+}

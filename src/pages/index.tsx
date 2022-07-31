@@ -118,7 +118,7 @@ export default function IndexPage({
           A few of the recent posts
         </span>
       </div>
-      <PostList posts={posts} homePage={true} />
+      <PostList posts={posts} />
       <Link href="/blog">
         <p className="mt-5">
           <a className="text-2xl text-pink-600 hover:bg-pink-400 hover:text-white">

@@ -25,11 +25,8 @@ function Post({ post }: { post: Frontmatter }) {
 export function PostList({
   posts,
   showHeading = false,
-  homePage = false,
 }) {
-  if (homePage && posts.length>10) {
-    posts.length = 10
-  }
+  
   return (
     <section>
       {showHeading && (

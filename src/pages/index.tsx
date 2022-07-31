@@ -140,7 +140,7 @@ export default function IndexPage({
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const posts = await getAllFrontMatters()
   // const projects = await getProjects()
 

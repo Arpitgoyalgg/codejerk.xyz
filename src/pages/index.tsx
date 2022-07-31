@@ -1,6 +1,5 @@
 import { Fragment, useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import { Blob } from '@/components/atoms'
 import { SEO } from '@/components/seo'
@@ -141,7 +140,7 @@ export default function IndexPage({
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps = async () => {
   const posts = await getAllFrontMatters()
   // const projects = await getProjects()
 

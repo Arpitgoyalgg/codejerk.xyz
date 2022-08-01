@@ -9,11 +9,12 @@ export function DinoCount(props) {
   const isMounted = useRef(false)
 
   useEffect(() => {
-    fetch(`https://api.jsonbin.io/v3/b/62d97a21248d43754ffe585b/latest`)
+    fetch(`/api/getBinData`)
       .then(response => response.json())
       .then(binData => {
         setExistingBinData(binData.record)
         setCount(binData.record.count)
+        console.log(binData)
       })
 
     fetch(`https://geolocation-db.com/json/`)
@@ -31,17 +32,13 @@ export function DinoCount(props) {
         geoData: prevGeo,
       }
 
-      const requestOptions = {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+      fetch('/api/putBinData', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(newData),
-      }
-      fetch(
-        'https://api.jsonbin.io/v3/b/62d97a21248d43754ffe585b',
-        requestOptions
-      )
-        .then(response => response.json())
-        .then(data => console.log('Getting sneaky, huh?'))
+      })
     } else {
       isMounted.current = true
     }

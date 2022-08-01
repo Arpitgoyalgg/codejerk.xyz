@@ -18,7 +18,7 @@ export function DinoCount(props) {
         console.log(binData)
       })
 
-    fetch(`https://geolocation-db.com/json/`)
+    fetch(`/api/getGeoData`)
       .then(response => response.json())
       .then(geoData => setGeoData(geoData))
   }, [])

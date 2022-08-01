@@ -4,6 +4,7 @@ import Image from 'next/image'
 export function DinoCount(props) {
   const [existingBinData, setExistingBinData] = useState()
   const [count, setCount] = useState()
+  const [hasCounted, setHasCounted] = useState(false)
   const [countDep, setCountDep] = useState(false)
   const [geoData, setGeoData] = useState()
   const isMounted = useRef(false)
@@ -45,7 +46,11 @@ export function DinoCount(props) {
   }, [countDep])
 
   function handleCountCountry() {
+    if (hasCounted) { 
+      return
+    }
     setCount(count + 1)
+    setHasCounted(true)
     setCountDep(!countDep)
   }
 

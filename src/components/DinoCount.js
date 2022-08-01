@@ -15,7 +15,6 @@ export function DinoCount(props) {
       .then(binData => {
         setExistingBinData(binData.record)
         setCount(binData.record.count)
-        console.log(binData)
       })
 
     fetch(`/api/getGeoData`)

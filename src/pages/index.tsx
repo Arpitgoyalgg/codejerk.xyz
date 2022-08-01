@@ -9,7 +9,7 @@ import Quote from '@/components/quote'
 import { CustomArrowDown } from '@/components/atoms'
 import { Contact } from '@/components/contact'
 import { getAllFrontMatters } from '@/lib/mdx'
-import { DinoCount } from '@/components/dinoCount'
+import { DinoCount } from '@/components/DinoCount'
 
 export default function IndexPage({ posts }) {
   return (

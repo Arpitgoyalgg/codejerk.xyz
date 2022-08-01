@@ -14,7 +14,6 @@ export function DinoCount(props) {
       .then(binData => {
         setExistingBinData(binData.record)
         setCount(binData.record.count)
-        console.log(binData)
       })
 
     fetch(`https://geolocation-db.com/json/`)
@@ -24,8 +23,6 @@ export function DinoCount(props) {
 
   useEffect(() => {
     if (isMounted.current) {
-      console.log('Previous Data below')
-      console.log(existingBinData)
       let prevGeo = existingBinData.geoData
       prevGeo.push(geoData)
       let newData = {

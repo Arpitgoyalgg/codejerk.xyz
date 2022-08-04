@@ -73,7 +73,7 @@ export function DinoCount(props) {
           <b>Cute, right?</b>
         </span>
         <div
-          className="text-center mt-2 animate-bounce"
+          className="text-center mt-2 animate-bounce cursor-pointer"
           onClick={handleCountCountry}
         >
           💖 {count}

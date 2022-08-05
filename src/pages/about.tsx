@@ -31,7 +31,7 @@ interface AboutPageProps {
 //   letterboxd,
 //   steam,
 // }: AboutPageProps) {
-export default function About() {
+export default function About({spotify}) {
   return (
     <Fragment>
       <SEO title="About" />
@@ -173,34 +173,34 @@ export default function About() {
             </ul>
           </mdx.p>
         </article>
-        {/* <h3 className="mb-4 text-2xl font-bold leading-tight mt-14 text-accent">
+        <h3 className="mb-4 text-2xl font-bold leading-tight mt-14 text-accent">
           Recents
         </h3>
-        <RichPresenceList presenceList={[notion, spotify, letterboxd, steam]} /> */}
+        <RichPresenceList presenceList={[spotify]} />
       </div>
       <Contact />
     </Fragment>
   )
 }
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   let spotify:
-//     | SpotifyCurrentTrack
-//     | SpotifyRecentTracks = await getCurrentlyPlaying()
-//   if (spotify === null) {
-//     spotify = await getRecentlyPlayed()
-//   }
+export const getStaticProps: GetStaticProps = async () => {
+  let spotify:
+    | SpotifyCurrentTrack
+    | SpotifyRecentTracks = await getCurrentlyPlaying()
+  if (spotify === null) {
+    spotify = await getRecentlyPlayed()
+  }
 
-//   const letterboxd = await getRecentMovies()
-//   const steam = await getRecentGames()
-//   const notion = await getDoingNow()
-//   return {
-//     props: {
-//       spotify,
-//       letterboxd,
-//       steam,
-//       notion,
-//     },
-//     revalidate: 60,
-//   }
-// }
+  // const letterboxd = await getRecentMovies()
+  // const steam = await getRecentGames()
+  // const notion = await getDoingNow()
+  return {
+    props: {
+      spotify,
+      // letterboxd,
+      // steam,
+      // notion,
+    },
+    revalidate: 60,
+  }
+}

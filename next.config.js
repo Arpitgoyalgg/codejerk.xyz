@@ -39,7 +39,7 @@ const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline' https://gc.zgo.at http://gc.zgo.at;
   style-src 'self' 'unsafe-inline';
-  img-src * blob: data: https://jeffjadulco.goatcounter.com/count;
+  img-src * blob: data: https://codejerk.goatcounter.com/count;
   media-src 'none';
   connect-src *;
   font-src 'self';

@@ -44,7 +44,7 @@ export async function getRefreshToken() {
       data: querystring.stringify({
         grant_type: 'authorization_code',
         code: auth_code,
-        redirect_uri: 'https://jeffjadulco.com/spotify',
+        redirect_uri: 'https://codejerk.com/spotify',
       }),
     })
 

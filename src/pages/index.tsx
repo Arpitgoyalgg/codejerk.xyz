@@ -17,8 +17,7 @@ export default function IndexPage({ posts }) {
       <SEO />
       <div className="flex flex-col-reverse items-center md:mt-12 lg:flex-row lg:justify-between lg:space-x-6">
         <p className="max-w-3xl mt-12 text-3xl font-semibold lg:mt-0 sm:text-4xl sm:text-left md:text-center lg:text-left">
-          Hi, I’m Arpit. I’m a web developer and an AWS Certified Cloud
-          Practitioner.
+          Hi, I’m Arpit. I’m 2x AWS Certified and a Web Developer.
           <br />
           <br />
           Also an undergrad engineering student in India.

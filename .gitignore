@@ -70,3 +70,6 @@ yarn-error.log
 # Project-specific
 public/sitemap.xml
 formspree.json
+
+# Jetbrains fleet
+/.fleet
